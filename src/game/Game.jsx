@@ -19,20 +19,51 @@ const Game = () => {
 
     console.log("COMP PLAY", computerPlay);
 
+    switch (type + computerPlay) {
+      case "RS":
+      case "PR":
+      case "SP":
+        console.log("USER WINS");
+        setUserCount(userCount + 1);
+        break;
+
+      case "RP":
+      case "PS":
+      case "SR":
+        console.log("COMPUTER WINS");
+        setCompCount(compCount + 1);
+        break;
+
+      case "PP":
+      case "RR":
+      case "SS":
+        console.log("It's a draw");
+        break;
+
+      default:
+        console.log("Nothing to report");
+    }
+
     if (type === computerPlay) {
       console.log("It's a draw");
     } else if (type === "R" && computerPlay === "P") {
       console.log("Paper beats rock");
+      setCompCount(compCount + 1);
     } else if (type === "R" && computerPlay === "S") {
       console.log("Rock beats scissors");
+      setUserCount(userCount + 1);
     } else if (type === "P" && computerPlay === "R") {
       console.log("Paper beats rock");
+      setUserCount(userCount + 1);
     } else if (type === "P" && computerPlay === "S") {
       console.log("Scissors cut paper");
+      setCompCount(compCount + 1);
     } else if (type === "S" && computerPlay === "P") {
       console.log("Scissors cut paper");
+      setUserCount(userCount + 1);
     } else if (type === "S" && computerPlay === "R") {
       console.log("Rock smashes scissors");
+      setCompCount(compCount + 1);
     } else {
       console.log("please choose a valid option");
     }
