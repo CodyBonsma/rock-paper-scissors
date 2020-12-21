@@ -60,7 +60,7 @@ const Game = () => {
       </p>
       <div className="row user-buttons">
         <div className="button rock col-sm-4">
-          <button ref={actionRef} value="R">
+          <button ref={actionRef} value="R" className="play-button">
             <img
               className="rock-image"
               src={rockImg}
@@ -71,7 +71,7 @@ const Game = () => {
           </button>
         </div>
         <div className="button paper col-sm-4">
-          <button ref={actionRef} value="P">
+          <button ref={actionRef} value="P" className="play-button">
             <img
               className="paper-image"
               src={paperImg}
@@ -82,7 +82,7 @@ const Game = () => {
           </button>
         </div>
         <div className="button scissor col-sm-4">
-          <button ref={actionRef} value="S">
+          <button ref={actionRef} value="S" className="play-button">
             <img
               className="scissor-image"
               src={scissorImg}

@@ -12,3 +12,7 @@
 .rock-image {
     width: 100px;
 }
+
+.play-button{
+    border-radius: 50%;
+}
