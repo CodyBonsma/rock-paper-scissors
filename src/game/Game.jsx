@@ -1,17 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
+import "./Game.css";
 import "bootstrap/dist/css/bootstrap.css";
+import rockImg from "../Images/rock.png";
+import paperImg from "../Images/paper.png";
+import scissorImg from "../Images/scissor.png";
 
 const Game = () => {
   const [userCount, setUserCount] = useState("");
   const [compCount, setCompCount] = useState("");
+  const actionRef = useRef();
 
   useEffect(() => {
     setUserCount(0);
     setCompCount(0);
   }, []);
 
-  const gameRound = (type) => {
-    console.log(type);
+  const gameRound = () => {
+    // access the ref of the user's choice
+    console.log(actionRef.current.value);
+    const userChoice = actionRef.current.value;
     // generate a random number for the computer's choice
 
     const choices = ["R", "P", "S"];
@@ -20,7 +27,7 @@ const Game = () => {
 
     console.log("COMP PLAY", computerPlay);
 
-    switch (type + computerPlay) {
+    switch (userChoice + computerPlay) {
       case "RS":
       case "PR":
       case "SP":
@@ -44,34 +51,47 @@ const Game = () => {
       default:
         console.log("Nothing to report");
     }
-
-    
   };
 
   return (
-    <div className="container">
-      <h2>This will hold the game logic</h2>
-      <div className="innerContainer">
-          <div className="row">
-        <p>
-          SCOREBOARD user: {userCount} vs comp: {compCount}
-        </p>
-      </div>
-      <div className="button rock col-sm-3">
-        <button value="R" onClick={(e) => gameRound(e.target.value)}>
-          Rock
-        </button>
-      </div>
-      <div className="button paper col-sm-3">
-        <button value="P" onClick={(e) => gameRound(e.target.value)}>
-          Paper
-        </button>
-      </div>
-      <div className="button scissor col-sm-3">
-        <button value="S" onClick={(e) => gameRound(e.target.value)}>
-          Scissors
-        </button>
-      </div>
+    <div className="innerContainer container">
+      <p className="scoreboard">
+        SCOREBOARD user: {userCount} vs comp: {compCount}
+      </p>
+      <div className="row user-buttons">
+        <div className="button rock col-sm-4">
+          <button ref={actionRef} value="R">
+            <img
+              className="rock-image"
+              src={rockImg}
+              alt="rock icon"
+              value="R"
+              onClick={(e) => gameRound(e.target.value)}
+            />
+          </button>
+        </div>
+        <div className="button paper col-sm-4">
+          <button ref={actionRef} value="P">
+            <img
+              className="paper-image"
+              src={paperImg}
+              alt="rock icon"
+              value="R"
+              onClick={(e) => gameRound(e.target.value)}
+            />
+          </button>
+        </div>
+        <div className="button scissor col-sm-4">
+          <button ref={actionRef} value="S">
+            <img
+              className="scissor-image"
+              src={scissorImg}
+              alt="rock icon"
+              value="R"
+              onClick={(e) => gameRound(e.target.value)}
+            />
+          </button>
+        </div>
       </div>
     </div>
   );

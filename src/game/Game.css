@@ -1,0 +1,14 @@
+.scoreboard {
+    color: blueviolet;
+}
+
+.user-buttons {
+    align-content: center;
+    margin-top: 5rem;
+}
+
+.paper-image,
+.scissor-image,
+.rock-image {
+    width: 100px;
+}
