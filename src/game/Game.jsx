@@ -8,6 +8,7 @@ import scissorImg from "../Images/scissor.png";
 const Game = () => {
   const [userCount, setUserCount] = useState("");
   const [compCount, setCompCount] = useState("");
+  const [compPlay, setCompPlay] = useState("");
   const actionRef = useRef();
 
   useEffect(() => {
@@ -24,6 +25,7 @@ const Game = () => {
     const choices = ["R", "P", "S"];
     let randomNumber = Math.floor(Math.random() * 3);
     let computerPlay = choices[randomNumber];
+    setCompPlay(computerPlay);
 
     console.log("COMP PLAY", computerPlay);
 
@@ -58,6 +60,12 @@ const Game = () => {
       <p className="scoreboard">
         SCOREBOARD user: {userCount} vs comp: {compCount}
       </p>
+      <div className="row comp-play">
+        <div className="col">
+          <h3>This will be the comp play</h3>
+          <h5>{compPlay}</h5>
+        </div>
+      </div>
       <div className="row user-buttons">
         <div className="button rock col-sm-4">
           <button ref={actionRef} value="R" className="play-button">

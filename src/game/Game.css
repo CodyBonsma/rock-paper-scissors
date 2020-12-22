@@ -1,18 +1,30 @@
 .scoreboard {
-    color: blueviolet;
+  color: blueviolet;
 }
 
 .user-buttons {
-    align-content: center;
-    margin-top: 5rem;
+  align-content: center;
+  margin-top: 10rem;
+  outline: none;
+}
+
+.user-buttons:focus {
+    outline: none !important;
 }
 
 .paper-image,
 .scissor-image,
 .rock-image {
-    width: 100px;
+  width: 150px;
+  cursor: pointer;
+  outline: none;
+  background-color: transparent;
 }
 
-.play-button{
-    border-radius: 50%;
+.play-button {
+  border-radius: 50%;
+}
+
+.comp-play{
+    padding-top: 7rem;
 }
