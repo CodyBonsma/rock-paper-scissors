@@ -6,11 +6,11 @@ import paperImg from "../Images/paper.png";
 import scissorImg from "../Images/scissor.png";
 
 const Game = () => {
-  const [userCount, setUserCount] = useState('');
-  const [compCount, setCompCount] = useState('');
-  const [compPlay, setCompPlay] = useState('');
-  const [compAnimation, setCompAnimation] = useState('');
-  const actionRef = useRef();
+  const [userCount, setUserCount] = useState("");
+  const [compCount, setCompCount] = useState("");
+  const [compPlay, setCompPlay] = useState("");
+  const [compAnimation, setCompAnimation] = useState("");
+  const actionRef = useRef("");
 
   if (userCount === 5 || compCount === 5) {
     setUserCount(0);
@@ -23,10 +23,10 @@ const Game = () => {
     setCompCount(0);
   }, []);
 
-  const gameRound = () => {
+  const gameRound = (event) => {
     // access the ref of the user's choice
-    console.log(actionRef.current.value);
-    const userChoice = actionRef.current.value;
+    console.log(event)
+    const userChoice = event;
     // generate a random number for the computer's choice
 
     const choices = ["R", "P", "S"];
@@ -34,12 +34,12 @@ const Game = () => {
     let computerPlay = choices[randomNumber];
     setCompPlay(computerPlay);
 
-    if(computerPlay === "R"){
-        setCompAnimation(rockImg)
-    } else if (computerPlay === "P"){
-        setCompAnimation(paperImg)
-    } else if (computerPlay === "S"){
-        setCompAnimation(scissorImg)
+    if (computerPlay === "R") {
+      setCompAnimation(rockImg);
+    } else if (computerPlay === "P") {
+      setCompAnimation(paperImg);
+    } else if (computerPlay === "S") {
+      setCompAnimation(scissorImg);
     }
 
     // show the computer's move with timeout
@@ -89,7 +89,7 @@ const Game = () => {
                 <img
                   className="computer-play rock-image"
                   src={compAnimation}
-                  alt="computer play"
+                  alt="computer play image"
                 />
               </h3>
             ) : null}
@@ -98,37 +98,34 @@ const Game = () => {
       </div>
       <div className="row user-buttons">
         <div className="button rock col-sm-4">
-          <button ref={actionRef} value="R" className="play-button">
-            <img
-              className="rock-image"
-              src={rockImg}
-              alt="rock icon"
-              value="R"
-              onClick={(e) => gameRound(e.target.value)}
-            />
-          </button>
+          <img
+            className="rock-image"
+            src={rockImg}
+            alt="rock icon"
+            ref={actionRef}
+            value="R"
+            onClick={() => gameRound('R')}
+          />
         </div>
         <div className="button paper col-sm-4">
-          <button ref={actionRef} value="P" className="play-button">
-            <img
-              className="paper-image"
-              src={paperImg}
-              alt="rock icon"
-              value="R"
-              onClick={(e) => gameRound(e.target.value)}
-            />
-          </button>
+          <img
+            className="paper-image"
+            src={paperImg}
+            alt="paper icon"
+            ref={actionRef}
+            value="P"
+            onClick={() => gameRound('P')}
+          />
         </div>
         <div className="button scissor col-sm-4">
-          <button ref={actionRef} value="S" className="play-button">
-            <img
-              className="scissor-image"
-              src={scissorImg}
-              alt="rock icon"
-              value="R"
-              onClick={(e) => gameRound(e.target.value)}
-            />
-          </button>
+          <img
+            className="scissor-image"
+            src={scissorImg}
+            alt="scissor icon"
+            ref={actionRef}
+            value="S"
+            onClick={() => gameRound('S')}
+          />
         </div>
       </div>
     </div>
