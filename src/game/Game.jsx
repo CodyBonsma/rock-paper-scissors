@@ -11,19 +11,16 @@ const Game = () => {
   const [compPlay, setCompPlay] = useState("");
   const actionRef = useRef();
 
+  if (userCount === 5 || compCount === 5) {
+    setUserCount(0);
+    setCompCount(0);
+    alert("Game over!");
+  }
+
   useEffect(() => {
     setUserCount(0);
     setCompCount(0);
-    const timer = setTimeout(() => {
-        setCompPlay('')
-    }, 2000);
-  }, [compPlay]);
-
-  const compAnimation = () => {
-      const computerPlay = setTimeout(() => {
-          setCompPlay('')
-      }, 2000)
-  }
+  }, []);
 
   const gameRound = () => {
     // access the ref of the user's choice
@@ -35,6 +32,11 @@ const Game = () => {
     let randomNumber = Math.floor(Math.random() * 3);
     let computerPlay = choices[randomNumber];
     setCompPlay(computerPlay);
+
+    // show the computer's move with timeout
+    setTimeout(() => {
+      setCompPlay("");
+    }, 3000);
 
     console.log("COMP PLAY", computerPlay);
 
@@ -71,10 +73,18 @@ const Game = () => {
       </p>
       <div className="row comp-play">
         <div className="col">
-          <h3>This will be the comp play</h3>
-          <h5>
-            {compPlay ? <img className="computer-play rock-image" src={rockImg} /> : null}
-          </h5>
+          <div>
+            {compPlay ? (
+              <h3>
+                computer plays <br />
+                <img
+                  className="computer-play rock-image"
+                  src={rockImg}
+                  alt="computer play"
+                />
+              </h3>
+            ) : null}
+          </div>
         </div>
       </div>
       <div className="row user-buttons">
