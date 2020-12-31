@@ -14,7 +14,16 @@ const Game = () => {
   useEffect(() => {
     setUserCount(0);
     setCompCount(0);
-  }, []);
+    const timer = setTimeout(() => {
+        setCompPlay('')
+    }, 2000);
+  }, [compPlay]);
+
+  const compAnimation = () => {
+      const computerPlay = setTimeout(() => {
+          setCompPlay('')
+      }, 2000)
+  }
 
   const gameRound = () => {
     // access the ref of the user's choice
@@ -63,7 +72,9 @@ const Game = () => {
       <div className="row comp-play">
         <div className="col">
           <h3>This will be the comp play</h3>
-          <h5>{compPlay}</h5>
+          <h5>
+            {compPlay ? <img className="computer-play rock-image" src={rockImg} /> : null}
+          </h5>
         </div>
       </div>
       <div className="row user-buttons">
