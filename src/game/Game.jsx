@@ -6,9 +6,10 @@ import paperImg from "../Images/paper.png";
 import scissorImg from "../Images/scissor.png";
 
 const Game = () => {
-  const [userCount, setUserCount] = useState("");
-  const [compCount, setCompCount] = useState("");
-  const [compPlay, setCompPlay] = useState("");
+  const [userCount, setUserCount] = useState('');
+  const [compCount, setCompCount] = useState('');
+  const [compPlay, setCompPlay] = useState('');
+  const [compAnimation, setCompAnimation] = useState('');
   const actionRef = useRef();
 
   if (userCount === 5 || compCount === 5) {
@@ -32,6 +33,14 @@ const Game = () => {
     let randomNumber = Math.floor(Math.random() * 3);
     let computerPlay = choices[randomNumber];
     setCompPlay(computerPlay);
+
+    if(computerPlay === "R"){
+        setCompAnimation(rockImg)
+    } else if (computerPlay === "P"){
+        setCompAnimation(paperImg)
+    } else if (computerPlay === "S"){
+        setCompAnimation(scissorImg)
+    }
 
     // show the computer's move with timeout
     setTimeout(() => {
@@ -79,7 +88,7 @@ const Game = () => {
                 computer plays <br />
                 <img
                   className="computer-play rock-image"
-                  src={rockImg}
+                  src={compAnimation}
                   alt="computer play"
                 />
               </h3>
