@@ -23,7 +23,7 @@ const Home = () => {
               <a
                 className="nav-link disabled"
                 href="#"
-                tabindex="-1"
+                tabIndex="-1"
                 aria-disabled="true"
               >
                 Disabled
@@ -37,8 +37,8 @@ const Home = () => {
             With supporting text below as a natural lead-in to additional
             content.
           </p>
-          <a href="#" class="btn btn-primary">
-            Go somewhere
+          <a href="/game" className="btn btn-primary">
+            Start Game
           </a>
         </div>
       </div>

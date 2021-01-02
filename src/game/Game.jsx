@@ -23,6 +23,11 @@ const Game = () => {
     setCompCount(0);
   }, []);
 
+  const clearGame = () => {
+      setUserCount(0);
+      setCompCount(0);
+  }
+
   const gameRound = (event) => {
     // access the ref of the user's choice
     console.log(event)
@@ -35,11 +40,11 @@ const Game = () => {
     setCompPlay(computerPlay);
 
     if (computerPlay === "R") {
-      setCompAnimation(rockImg);
+      setCompAnimation('ROCK');
     } else if (computerPlay === "P") {
-      setCompAnimation(paperImg);
+      setCompAnimation('PAPER');
     } else if (computerPlay === "S") {
-      setCompAnimation(scissorImg);
+      setCompAnimation('SCISSORS');
     }
 
     // show the computer's move with timeout
@@ -86,11 +91,12 @@ const Game = () => {
             {compPlay ? (
               <h3>
                 computer plays <br />
-                <img
+                {/* <img
                   className="computer-play rock-image"
                   src={compAnimation}
                   alt="computer play image"
-                />
+                /> */}
+                <h2>{compAnimation}</h2>
               </h3>
             ) : null}
           </div>
@@ -127,6 +133,15 @@ const Game = () => {
             onClick={() => gameRound('S')}
           />
         </div>
+      </div>
+      <div className="row lower-navigation">
+          <div className="col-sm-2"/>
+          <div className="col-sm-4">
+              <button><a href="/">Home</a></button>
+          </div>
+          <div className="col-sm-4">
+              <button onClick={() => clearGame()}>Clear</button>
+          </div>
       </div>
     </div>
   );
