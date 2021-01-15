@@ -50,7 +50,7 @@ const Game = () => {
     // show the computer's move with timeout
     setTimeout(() => {
       setCompPlay("");
-    }, 3000);
+    }, 5000);
 
     console.log("COMP PLAY", computerPlay);
 
@@ -86,7 +86,7 @@ const Game = () => {
         SCOREBOARD user: {userCount} vs comp: {compCount}
       </p>
       <div className="row comp-play">
-        <div className="col">
+        <div className="col comp-section">
           <div>
             {compPlay ? (
               <h3>

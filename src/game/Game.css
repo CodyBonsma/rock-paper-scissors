@@ -8,9 +8,9 @@
   outline: none;
 }
 
-.user-buttons:focus {
+/* .user-buttons:focus {
     outline: none !important;
-}
+} */
 
 .paper-image,
 .scissor-image,
@@ -31,4 +31,9 @@
 
 .lower-navigation {
   padding: 50px;
+}
+
+.comp-section {
+  min-height: 50px;
+  max-height: 51px;
 }
