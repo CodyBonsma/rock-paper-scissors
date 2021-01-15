@@ -24,13 +24,13 @@ const Game = () => {
   }, []);
 
   const clearGame = () => {
-      setUserCount(0);
-      setCompCount(0);
-  }
+    setUserCount(0);
+    setCompCount(0);
+  };
 
   const gameRound = (event) => {
     // access the ref of the user's choice
-    console.log(event)
+    console.log(event);
     const userChoice = event;
     // generate a random number for the computer's choice
 
@@ -40,17 +40,17 @@ const Game = () => {
     setCompPlay(computerPlay);
 
     if (computerPlay === "R") {
-      setCompAnimation('ROCK');
+      setCompAnimation("ROCK");
     } else if (computerPlay === "P") {
-      setCompAnimation('PAPER');
+      setCompAnimation("PAPER");
     } else if (computerPlay === "S") {
-      setCompAnimation('SCISSORS');
+      setCompAnimation("SCISSORS");
     }
 
     // show the computer's move with timeout
     setTimeout(() => {
       setCompPlay("");
-    }, 5000);
+    }, 3000);
 
     console.log("COMP PLAY", computerPlay);
 
@@ -82,9 +82,15 @@ const Game = () => {
 
   return (
     <div className="innerContainer container">
-      <p className="scoreboard">
-        SCOREBOARD user: {userCount} vs comp: {compCount}
-      </p>
+      <div className="row">
+        {" "}
+        <div className="col-sm-4 scoreboard">
+          <p>
+            {userCount} : {compCount}
+          </p>
+        </div>
+      </div>
+
       <div className="row comp-play">
         <div className="col comp-section">
           <div>
@@ -110,7 +116,7 @@ const Game = () => {
             alt="rock icon"
             ref={actionRef}
             value="R"
-            onClick={() => gameRound('R')}
+            onClick={() => gameRound("R")}
           />
         </div>
         <div className="button paper col-sm-4">
@@ -120,7 +126,7 @@ const Game = () => {
             alt="paper icon"
             ref={actionRef}
             value="P"
-            onClick={() => gameRound('P')}
+            onClick={() => gameRound("P")}
           />
         </div>
         <div className="button scissor col-sm-4">
@@ -130,18 +136,20 @@ const Game = () => {
             alt="scissor icon"
             ref={actionRef}
             value="S"
-            onClick={() => gameRound('S')}
+            onClick={() => gameRound("S")}
           />
         </div>
       </div>
       <div className="row lower-navigation">
-          <div className="col-sm-2"/>
-          <div className="col-sm-4">
-              <button><a href="/">Home</a></button>
-          </div>
-          <div className="col-sm-4">
-              <button onClick={() => clearGame()}>Clear</button>
-          </div>
+        <div className="col-sm-2" />
+        <div className="col-sm-4">
+          <button>
+            <a href="/">Home</a>
+          </button>
+        </div>
+        <div className="col-sm-4">
+          <button onClick={() => clearGame()}>Clear</button>
+        </div>
       </div>
     </div>
   );
