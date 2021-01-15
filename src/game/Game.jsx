@@ -83,11 +83,16 @@ const Game = () => {
   return (
     <div className="innerContainer container">
       <div className="row">
-        {" "}
+      <div className="col-sm-4 scoreboard-you">
+          <h3>You</h3>
+        </div>
         <div className="col-sm-4 scoreboard">
           <p>
             {userCount} : {compCount}
           </p>
+        </div>
+        <div className="col-sm-4 scoreboard-comp">
+          <h3>Comp</h3>
         </div>
       </div>
 
