@@ -40,11 +40,11 @@ const Game = () => {
     setCompPlay(computerPlay);
 
     if (computerPlay === "R") {
-      setCompAnimation("ROCK");
+      setCompAnimation(rockImg);
     } else if (computerPlay === "P") {
-      setCompAnimation("PAPER");
+      setCompAnimation(paperImg);
     } else if (computerPlay === "S") {
-      setCompAnimation("SCISSORS");
+      setCompAnimation(scissorImg);
     }
 
     // show the computer's move with timeout
@@ -102,12 +102,12 @@ const Game = () => {
             {compPlay ? (
               <h3>
                 computer plays <br />
-                {/* <img
+                <img
                   className="computer-play rock-image"
                   src={compAnimation}
                   alt="computer play image"
-                /> */}
-                <h2>{compAnimation}</h2>
+                />
+                {/* <h2>{compAnimation}</h2> */}
               </h3>
             ) : null}
           </div>
