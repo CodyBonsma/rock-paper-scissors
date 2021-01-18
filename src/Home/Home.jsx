@@ -38,7 +38,7 @@ const Home = () => {
             With supporting text below as a natural lead-in to additional
             content.
           </p>
-          <a href="/game" className="btn btn-primary">
+          <a href="/game" className="btn btn-go">
             Start Game
           </a>
         </div>
