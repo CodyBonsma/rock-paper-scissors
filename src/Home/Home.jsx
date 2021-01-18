@@ -5,7 +5,7 @@ const Home = () => {
   return (
 
     <div className="container main-nav">
-      <h2>This will be the home page</h2>
+      <h2 id="front-title">Rock Paper Scissors</h2>
       <div className="card text-center">
         <div className="card-header">
           <ul className="nav nav-tabs card-header-tabs">

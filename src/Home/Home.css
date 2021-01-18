@@ -1,3 +1,9 @@
 .main-nav {
     margin-top: 7rem;
 }
+
+#front-title {
+    font-size: 40px;
+    color: black;
+    text-shadow: 2px 2px #427388;
+}
