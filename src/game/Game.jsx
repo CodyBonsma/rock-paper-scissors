@@ -114,7 +114,7 @@ const Game = () => {
         </div>
       </div>
       <div className="row user-buttons">
-        <div className="button rock col-sm-4">
+        <div className="button shadow rock col-sm-4">
           <img
             className="rock-image"
             src={rockImg}
@@ -124,7 +124,7 @@ const Game = () => {
             onClick={() => gameRound("R")}
           />
         </div>
-        <div className="button paper col-sm-4">
+        <div className="button shadow paper col-sm-4">
           <img
             className="paper-image"
             src={paperImg}
@@ -134,7 +134,7 @@ const Game = () => {
             onClick={() => gameRound("P")}
           />
         </div>
-        <div className="button scissor col-sm-4">
+        <div className="button shadow scissor col-sm-4">
           <img
             className="scissor-image"
             src={scissorImg}
