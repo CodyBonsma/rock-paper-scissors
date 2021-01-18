@@ -6,7 +6,8 @@ const Home = () => {
 
     <div className="container main-nav">
       <h2 id="front-title">Rock Paper Scissors</h2>
-      <div className="card text-center">
+      <hr/>
+      <div className="card text-center home-tron">
         <div className="card-header">
           <ul className="nav nav-tabs card-header-tabs">
             <li className="nav-item">
