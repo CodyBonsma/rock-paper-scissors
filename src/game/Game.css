@@ -52,7 +52,7 @@ body {
   background-color: transparent;
 }
 
-.user-buttons .shadow::before {
+.shadowmane::before {
   content: '';
   position: absolute;
   bottom: -50px;
@@ -63,10 +63,6 @@ body {
   border-radius: 50%;
   z-index: -1;
   filter: blur(7px);
-}
-
-.shadow {
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.00) !important;
 }
 
 .play-button {
