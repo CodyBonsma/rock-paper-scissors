@@ -148,12 +148,12 @@ const Game = () => {
       <div className="row lower-navigation">
         <div className="col-sm-2" />
         <div className="col-sm-4">
-          <button>
-            <a href="/">Home</a>
+          <button id="game-button" onClick={() => window.location.href="/"}>
+            Home
           </button>
         </div>
         <div className="col-sm-4">
-          <button onClick={() => clearGame()}>Clear</button>
+          <button id="game-button" onClick={() => clearGame()}>Clear</button>
         </div>
       </div>
     </div>

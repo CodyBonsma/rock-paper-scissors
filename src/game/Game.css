@@ -101,3 +101,15 @@ body {
   90% { transform: translate(1px, 2px) rotate(0deg); }
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
+
+#game-button {
+  background-color: inherit;
+  color: black;
+  border: 2px solid black;
+  transition-duration: 0.4s;
+}
+
+#game-button:hover {
+  background-color: #52a77c;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.30) !important;
+}
