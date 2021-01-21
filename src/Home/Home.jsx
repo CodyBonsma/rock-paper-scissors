@@ -4,15 +4,13 @@ import "./Home.css";
 
 const Home = () => {
   const [pane, setPane] = useState(true);
-  const [active, setActive] = useState(false);
 
+  // these functions toggle between tabs
   const toggleOptOne = () => {
-    console.log("clicked this pane");
     setPane(true)
   }
 
   const toggleOptTwo = () => {
-    console.log('clicked toggle dos')
     setPane(false)
   }
 
@@ -21,13 +19,12 @@ const Home = () => {
       <h2 id="front-title">Rock Paper Scissors</h2>
       <hr />
 
-      <div className="card text-center">
+      <div className="card text-center home-tron">
         <div className="card-header">
           <ul className="nav nav-tabs card-header-tabs">
             <li className="nav-item">
               <a
                 className="nav-link"
-                active={active}
                 onClick={() => toggleOptOne()}
                 role="tab"
                 data-toggle="tab"
@@ -40,7 +37,6 @@ const Home = () => {
               <a
                 className="nav-link"
                 onClick={() => toggleOptTwo()}
-                active={active}
                 role="tab"
                 href="#info"
                 data-toggle="tab"
@@ -63,8 +59,8 @@ const Home = () => {
                 With supporting text below as a natural lead-in to additional
                 content.
               </p>
-              <a href="#" class="btn btn-go">
-                Go somewhere
+              <a href="/game" className="btn btn-go">
+                Start Game
               </a>
             </div>{" "}
           </div>
