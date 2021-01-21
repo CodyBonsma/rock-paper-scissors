@@ -3,12 +3,18 @@ import { ToggleButton } from "react-bootstrap";
 import "./Home.css";
 
 const Home = () => {
-  const [pane, setPane] = useState(false);
+  const [pane, setPane] = useState(true);
+  const [active, setActive] = useState(false);
 
-  const togglePane = () => {
-    console.log("clicked toggle");
-    setPane(true);
-  };
+  const toggleOptOne = () => {
+    console.log("clicked this pane");
+    setPane(true)
+  }
+
+  const toggleOptTwo = () => {
+    console.log('clicked toggle dos')
+    setPane(false)
+  }
 
   return (
     <div className="container main-nav">
@@ -20,23 +26,26 @@ const Home = () => {
           <ul className="nav nav-tabs card-header-tabs">
             <li className="nav-item">
               <a
-                className="nav-link active"
+                className="nav-link"
+                active={active}
+                onClick={() => toggleOptOne()}
                 role="tab"
                 data-toggle="tab"
                 href="#start"
               >
-                Active
+                Start
               </a>
             </li>
             <li className="nav-item">
               <a
                 className="nav-link"
-                onClick={() => togglePane()}
+                onClick={() => toggleOptTwo()}
+                active={active}
                 role="tab"
                 href="#info"
                 data-toggle="tab"
               >
-                Link
+               Info
               </a>
             </li>
           </ul>
@@ -54,7 +63,7 @@ const Home = () => {
                 With supporting text below as a natural lead-in to additional
                 content.
               </p>
-              <a href="#" class="btn btn-primary">
+              <a href="#" class="btn btn-go">
                 Go somewhere
               </a>
             </div>{" "}
