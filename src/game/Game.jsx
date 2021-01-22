@@ -100,7 +100,7 @@ const Game = () => {
         <div className="col comp-section">
           <div>
             {compPlay ? (
-              <h3>
+              <p>
                 computer plays <br />
                 <img
                   className="computer-play rock-image"
@@ -108,7 +108,7 @@ const Game = () => {
                   alt="computer play image"
                 />
                 {/* <h2>{compAnimation}</h2> */}
-              </h3>
+              </p>
             ) : null}
           </div>
         </div>

@@ -12,6 +12,9 @@
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.6) !important;
   margin: 30px auto;
   width: 800px;
+  background-color: inherit;
+  color: black;
+  border: 2px solid black;
 }
 
 .btn-go {
