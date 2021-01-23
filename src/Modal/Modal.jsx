@@ -1,15 +1,19 @@
-import React, {useState} from 'react';
-import "./Modal.css"
+import React, { useState } from "react";
+import "./Modal.css";
+import ReactDom from "react-dom";
 
-const Modal = ({open, children}) => {
-if(!open) return null;
+const Modal = ({ open, onClose }) => {
+  if (!open) return null;
 
-    return (
-        <div className="modal-container">
-            <h3>content</h3>
-            <button>Close Modal</button>
-        </div>
-    );
+  return ReactDom.createPortal (
+    <>
+      <div className="modal-container">
+        <h3>content</h3>
+        <button onClick={onClose}>Close Modal</button>
+      </div>
+    </>,
+    document.getElementById('portal')
+  );
 };
 
 export default Modal;

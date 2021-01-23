@@ -14,16 +14,17 @@ const Game = () => {
   const [isOpen, setIsOpen] = useState(false);
   const actionRef = useRef("");
 
-  if (userCount === 5 || compCount === 5) {
-    // setUserCount(0);
-    // setCompCount(0);
-    setIsOpen(true);
-  }
-
   useEffect(() => {
     setUserCount(0);
     setCompCount(0);
   }, []);
+
+  if (userCount === 5 || compCount === 5) {
+    setIsOpen(true);
+
+    setUserCount(0);
+    setCompCount(0);
+  }
 
   const clearGame = () => {
     setUserCount(0);
@@ -98,8 +99,8 @@ const Game = () => {
         </div>
       </div>
 
-// DO THIS 3X TIMES AT LEAST BETCH
-      <Modal open={isOpen} />
+{/* // DO THIS 3X TIMES AT LEAST BETCH */}
+      <Modal open={isOpen} onClose={() => setIsOpen(false)}/>
 
       <div className="row comp-play">
         <div className="col comp-section">
