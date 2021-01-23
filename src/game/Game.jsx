@@ -18,7 +18,6 @@ const Game = () => {
     // setUserCount(0);
     // setCompCount(0);
     setIsOpen(true);
-    
   }
 
   useEffect(() => {
@@ -99,6 +98,7 @@ const Game = () => {
         </div>
       </div>
 
+// DO THIS 3X TIMES AT LEAST BETCH
       <Modal open={isOpen} />
 
       <div className="row comp-play">
