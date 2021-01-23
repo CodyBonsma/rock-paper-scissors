@@ -19,11 +19,16 @@ const Game = () => {
     setCompCount(0);
   }, []);
 
-  if (userCount === 5 || compCount === 5) {
-    setIsOpen(true);
+  // create two conditionals for a user win and comp win
 
-    setUserCount(0);
-    setCompCount(0);
+  if (userCount === 5) {
+    console.log("User wins!");
+    clearGame();
+    setIsOpen(true);
+  } else if (compCount === 5) {
+    console.log("You lost!");
+    clearGame();
+    setIsOpen(true);
   }
 
   const clearGame = () => {
@@ -99,8 +104,8 @@ const Game = () => {
         </div>
       </div>
 
-{/* // DO THIS 3X TIMES AT LEAST BETCH */}
-      <Modal open={isOpen} onClose={() => setIsOpen(false)}/>
+      {/* // DO THIS 3X TIMES AT LEAST BETCH */}
+      <Modal open={isOpen} onClose={() => setIsOpen(false)} />
 
       <div className="row comp-play">
         <div className="col comp-section">
