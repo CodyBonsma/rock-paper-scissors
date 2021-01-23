@@ -11,12 +11,14 @@ const Game = () => {
   const [compCount, setCompCount] = useState("");
   const [compPlay, setCompPlay] = useState("");
   const [compAnimation, setCompAnimation] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
   const actionRef = useRef("");
 
   if (userCount === 5 || compCount === 5) {
-    setUserCount(0);
-    setCompCount(0);
-    alert("Game over!");
+    // setUserCount(0);
+    // setCompCount(0);
+    setIsOpen(true);
+    
   }
 
   useEffect(() => {
@@ -84,7 +86,7 @@ const Game = () => {
   return (
     <div className="innerContainer container">
       <div className="row col">
-      <div className="col-sm-5 scoreboard-you">
+        <div className="col-sm-5 scoreboard-you">
           <h3 id="scoreboard-title">user</h3>
         </div>
         <div className="col-sm-2 scoreboard">
@@ -97,7 +99,7 @@ const Game = () => {
         </div>
       </div>
 
-      <Modal/>
+      <Modal open={isOpen} />
 
       <div className="row comp-play">
         <div className="col comp-section">
@@ -151,12 +153,14 @@ const Game = () => {
       <div className="row lower-navigation">
         <div className="col-sm-2" />
         <div className="col-sm-4">
-          <button id="game-button" onClick={() => window.location.href="/"}>
+          <button id="game-button" onClick={() => (window.location.href = "/")}>
             Home
           </button>
         </div>
         <div className="col-sm-4">
-          <button id="game-button" onClick={() => clearGame()}>Clear</button>
+          <button id="game-button" onClick={() => clearGame()}>
+            Clear
+          </button>
         </div>
       </div>
     </div>
