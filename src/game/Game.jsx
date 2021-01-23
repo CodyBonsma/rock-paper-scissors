@@ -23,12 +23,14 @@ const Game = () => {
 
   if (userCount === 5) {
     console.log("User wins!");
-    clearGame();
     setIsOpen(true);
+    setUserCount(0);
+    setCompCount(0);
   } else if (compCount === 5) {
     console.log("You lost!");
-    clearGame();
     setIsOpen(true);
+    setUserCount(0);
+    setCompCount(0);
   }
 
   const clearGame = () => {
