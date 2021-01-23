@@ -13,10 +13,16 @@
   margin: 30px auto;
   width: 800px;
   background-color: inherit;
-  color: black;
+  color: white;
   border: 2px solid black;
 }
 
 .btn-go {
     background: #52a77c;
+  transition-duration: 0.4s;
+}
+
+.btn-go:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.30) !important;
+
 }

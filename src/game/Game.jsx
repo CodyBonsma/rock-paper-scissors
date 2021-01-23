@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./Game.css";
 import "bootstrap/dist/css/bootstrap.css";
+import Modal from "../Modal/Modal";
 import rockImg from "../Images/rock.png";
 import paperImg from "../Images/paper.png";
 import scissorImg from "../Images/scissor.png";
@@ -95,6 +96,8 @@ const Game = () => {
           <h3 id="scoreboard-title">comp</h3>
         </div>
       </div>
+
+      <Modal/>
 
       <div className="row comp-play">
         <div className="col comp-section">
