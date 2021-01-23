@@ -12,22 +12,24 @@ const Game = () => {
   const [compPlay, setCompPlay] = useState("");
   const [compAnimation, setCompAnimation] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+  const [modalMessage, setModalMessage] = useState("");
   const actionRef = useRef("");
 
   useEffect(() => {
-    setUserCount(0);
-    setCompCount(0);
+    clearGame();
   }, []);
 
   // create two conditionals for a user win and comp win
 
   if (userCount === 5) {
     console.log("User wins!");
+    setModalMessage("You won!");
     setIsOpen(true);
     setUserCount(0);
     setCompCount(0);
   } else if (compCount === 5) {
     console.log("You lost!");
+    setModalMessage("You lost...");
     setIsOpen(true);
     setUserCount(0);
     setCompCount(0);
@@ -107,7 +109,12 @@ const Game = () => {
       </div>
 
       {/* // DO THIS 3X TIMES AT LEAST BETCH */}
-      <Modal open={isOpen} onClose={() => setIsOpen(false)} />
+      <Modal
+        score={(userCount, compCount)}
+        outcome={modalMessage}
+        open={isOpen}
+        onClose={() => setIsOpen(false)}
+      />
 
       <div className="row comp-play">
         <div className="col comp-section">
