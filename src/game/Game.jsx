@@ -23,13 +23,19 @@ const Game = () => {
 
   if (userCount === 5) {
     console.log("User wins!");
-    setModalMessage("You won!");
+    setModalMessage({
+      title: "You won!",
+      message: "Congrats on showing the comp who's boss around here",
+    });
     setIsOpen(true);
     setUserCount(0);
     setCompCount(0);
   } else if (compCount === 5) {
     console.log("You lost!");
-    setModalMessage("You lost...");
+    setModalMessage({
+      title: "You lost...",
+      message: "Go back to that mirror and get some practice in",
+    });
     setIsOpen(true);
     setUserCount(0);
     setCompCount(0);
@@ -121,7 +127,7 @@ const Game = () => {
           <div>
             {compPlay ? (
               <p>
-                computer plays <br /> {" "}
+                computer plays <br />{" "}
                 <img
                   className="computer-play rock-image"
                   src={compAnimation}
