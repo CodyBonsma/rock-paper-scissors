@@ -121,7 +121,7 @@ const Game = () => {
           <div>
             {compPlay ? (
               <p>
-                computer plays <br />
+                computer plays <br /> {" "}
                 <img
                   className="computer-play rock-image"
                   src={compAnimation}
