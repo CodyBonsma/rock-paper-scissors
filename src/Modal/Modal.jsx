@@ -12,9 +12,17 @@ const Modal = ({ open, onClose, outcome, userCount, compCount }) => {
       <div className="overlaydis" />
       <div className="modal-container">
         <h3>{outcome.title}</h3>
+        <hr/>
         <p>{outcome.message}</p>
-        <button onClick={onClose}>Play again</button>{" "}
-        <button onClick={() => (window.location.href = "/")}>Home</button>
+        <button className="mod-btn" onClick={onClose}>
+          Play again
+        </button>{" "}
+        <button
+          className="mod-btn"
+          onClick={() => (window.location.href = "/")}
+        >
+          Home
+        </button>
       </div>
     </>,
     document.getElementById("portal")
