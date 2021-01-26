@@ -6,7 +6,7 @@ import Footer from "./Footer/Footer";
 
 function App() {
   return (
-    <Router basename="/">
+    <Router basename="/rock-paper-scissors">
       <div className="App">
         <Switch>
           <Route exact path={["/", "/home"]}>
