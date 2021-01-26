@@ -8,7 +8,7 @@ import Footer from "./Footer/Footer";
 
 function App() {
   return (
-    <Router >
+    <Router basename="/rock-paper-scissors">
       <div className="App">
         <Switch>
           <Route path="/game" component={Game} />
