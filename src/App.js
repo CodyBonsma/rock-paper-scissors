@@ -9,14 +9,10 @@ function App() {
     <Router basename="/rock-paper-scissors">
       <div className="App">
         <Switch>
-          <Route exact path={["/", "/home"]}>
-            <Home />
-          </Route>
-          <Route exact path={["/game"]}>
-            <Game />
-          </Route>
+          <Route exact path={["/", "/home"]} component={Home} />
+          <Route exact path="/game" component={Game} />
         </Switch>
-        <Footer/>
+        <Footer />
       </div>
     </Router>
   );
