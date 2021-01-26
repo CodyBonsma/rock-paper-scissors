@@ -1,6 +1,6 @@
 {
   "homepage": "https://codybonsma.github.io/rock-paper-scissors/",
-  "name": "rps-game",
+  "name": "rock-paper-scissors",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
