@@ -12,7 +12,7 @@ function App() {
           <Route exact path={["/", "/home"]}>
             <Home />
           </Route>
-          <Route path={"/game"}>
+          <Route exact path={["/game"]}>
             <Game />
           </Route>
         </Switch>
