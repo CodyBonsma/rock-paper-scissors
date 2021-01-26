@@ -1,4 +1,5 @@
 import "./App.css";
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "react-router";
 import Game from "./game/Game";
@@ -10,8 +11,8 @@ function App() {
     <Router >
       <div className="App">
         <Switch>
-          <Route path={["/", "/home"]} component={Home} />
           <Route path="/game" component={Game} />
+          <Route path={["/", "/home"]} component={Home} />
         </Switch>
         <Footer />
       </div>
