@@ -11,7 +11,7 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
-          <Route path="/rock-paper-scissors/game" component={Game} />
+          <Route path="/game" component={Game} />
           <Route path={["/", "/home"]} component={Home} />
         </Switch>
         <Footer />

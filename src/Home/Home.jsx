@@ -16,7 +16,7 @@ const Home = () => {
   };
 
   return (
-    <BrowserRouter basename="/rock-paper-scissors">
+
       <div className="container main-nav">
         <h2 id="front-title">Rock, Paper, Scissors</h2>
         <hr />
@@ -63,9 +63,9 @@ const Home = () => {
                   Try your moves against the computer in a classic game of rock,
                   paper, scissors
                 </p>
-                <Link to="/game">
-                  <button className="btn btn-go">Start Game</button>
-                </Link>
+                {/* <Link to="/game"> */}
+                  <button onClick={() => (window.location.href= "/game")} className="btn btn-go">Start Game</button>
+                {/* </Link> */}
               </div>{" "}
             </div>
           ) : (
@@ -80,7 +80,7 @@ const Home = () => {
           )}
         </div>
       </div>
-    </BrowserRouter>
+   
   );
 };
 
