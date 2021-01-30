@@ -14,7 +14,7 @@ A fun project to build out a RPS game with a Reactjs framework. Included some ne
 * [Questions](#Questions)
 
 ## Installation
-Click here to open the app
+Click [here](https://rps-game-bon.herokuapp.com/) to open the app on Heroku
 
 ## Screenshots
 ![home](./src/Images/home.png)
