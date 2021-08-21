@@ -77,7 +77,7 @@ const Home = () => {
             <p>
               Rock Paper Scissors is a zero sum game that is usually played by
               two people using their hands. The rules to play are pretty simple:
-              Rock wins agains Scissors - Scissors wins against Paper - and
+              Rock wins against Scissors - Scissors wins against Paper - and
               Paper wins against Rock. Best out of 5, wins.
             </p>
           </div>
